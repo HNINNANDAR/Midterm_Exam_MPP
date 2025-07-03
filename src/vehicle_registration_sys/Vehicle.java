@@ -7,9 +7,9 @@ public class Vehicle {
     private String vehicleNo;
     private Owner owner;
 
-    public Vehicle(String vehicleNo, Owner owner) {
+    public Vehicle(String vehicleNo) {
         this.vehicleNo = vehicleNo;
-        this.owner = owner;
+//        this.owner = owner;
     }
 
     public String getVehicleNo() {

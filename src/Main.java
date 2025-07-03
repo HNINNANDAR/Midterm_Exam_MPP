@@ -13,11 +13,15 @@ public class Main {
         Owner owner = new Owner("Thae");
         Owner owner1 = new Owner("Lay");
 
-        Vehicle vehicle = new Vehicle("V001", owner);
-        Vehicle vehicle1 = new Vehicle("V002", owner);
+        Vehicle vehicle = new Vehicle("V001");
+        Vehicle vehicle1 = new Vehicle("V002");
+        Vehicle vehicle2 = new Vehicle("V003");
+        Vehicle vehicle3 = new Vehicle("V004");
 
-        Vehicle vehicle2 = new Vehicle("V003", owner1);
-        Vehicle vehicle3 = new Vehicle("V004", owner1);
+        vehicle.setOwner(owner);
+        vehicle1.setOwner(owner);
+        vehicle2.setOwner(owner1);
+        vehicle3.setOwner(owner1);
 
         owner.addVehicle(vehicle1);
         owner1.addVehicle(vehicle2);

@@ -21,7 +21,7 @@ public class Owner {
 
     public void addVehicle(Vehicle vehicle){
 //        vehicle.setOwner(owner);
-        vehicleList.add(vehicle);
+        this.vehicleList.add(vehicle);
     }
     public List<Vehicle> getVehicleList(){
         return vehicleList;
