@@ -1,15 +1,31 @@
+import vehicle_registration_sys.Owner;
+import vehicle_registration_sys.Vehicle;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    public static void main(String[] args) throws IllegalAccessException {
+        Owner owner = new Owner("Thae");
+        Owner owner1 = new Owner("Lay");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Vehicle vehicle = new Vehicle("V001", owner);
+        Vehicle vehicle1 = new Vehicle("V002", owner);
+
+        Vehicle vehicle2 = new Vehicle("V003", owner1);
+        Vehicle vehicle3 = new Vehicle("V004", owner1);
+
+        owner.addVehicle(vehicle1);
+        owner1.addVehicle(vehicle2);
+        owner1.addVehicle(vehicle2);
+        owner1.addVehicle(vehicle3);
+
+        System.out.println(owner);
+        System.out.println(owner1);
+
     }
 }

@@ -1,22 +1,36 @@
-
-import java.io.*;
-import java.util.*;
+package vehicle_registration_sys;
 
 /**
  * 
  */
 public class Vehicle {
+    private String vehicleNo;
+    private Owner owner;
 
-    /**
-     * Default constructor
-     */
-    public Vehicle() {
+    public Vehicle(String vehicleNo, Owner owner) {
+        this.vehicleNo = vehicleNo;
+        this.owner = owner;
     }
 
-    /**
-     * 
-     */
-    private String vehicleNo;
+    public String getVehicleNo() {
+        return vehicleNo;
+    }
 
+    public Owner getOwner() {
+        return owner;
+    }
 
+    public void setOwner(Owner owner){
+        if(this.owner != null)
+            throw new IllegalArgumentException("This vehicle already have an owner!");
+        this.owner = owner;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "vehicleNo='" + vehicleNo + '\'' +
+                ", owner=" + owner.getOwnerName() +
+                '}';
+    }
 }

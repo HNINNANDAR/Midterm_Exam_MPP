@@ -1,22 +1,37 @@
+package vehicle_registration_sys;
 
-import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 
  */
 public class Owner {
+    private String ownerName;
+    private List<Vehicle> vehicleList;
 
-    /**
-     * Default constructor
-     */
-    public Owner() {
+    public Owner(String ownerName) {
+        this.ownerName = ownerName;
+        this.vehicleList = new ArrayList<>();
     }
 
-    /**
-     * 
-     */
-    private String ownerName;
+    public String getOwnerName() {
+        return ownerName;
+    }
 
+    public void addVehicle(Vehicle vehicle){
+//        vehicle.setOwner(owner);
+        vehicleList.add(vehicle);
+    }
+    public List<Vehicle> getVehicleList(){
+        return vehicleList;
+    }
 
+    @Override
+    public String toString() {
+        return "Owner{" +
+                "ownerName='" + ownerName + '\'' +
+                ", vehicleList=" + vehicleList.toString() +
+                '}';
+    }
 }
